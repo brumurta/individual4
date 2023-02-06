@@ -26,4 +26,37 @@ inicio date
 
 
 ⇨ Como essas entidades estão relacionadas?
-cursos tem turmas e turmas tem alunos.
+Cursos tem turmas e turmas tem alunos. A cardinalidade se encontra no print tabela, dentro da pasta sql. 
+
+
+⇨ Código completo utilizado para criar o banco de dados: disponível abaixo e em prints código, dentro da pasta sql;
+mysql -u root -p
+create database resilia;
+use resilia;
+show tables;
+
+create table curso (
+unidade varchar(50),
+turno varchar(10),
+nome varchar(30),
+id_curso varchar(05) primary key);
+
+describe curso;
+
+create table turma (
+id_turma int primary key,
+estudantes int,
+professor varchar(50),
+sala int);
+
+describe turma;
+
+create table aluno (
+matricula float primary key,
+nome varchar(50),
+cpf varchar(30),
+inicio date);
+
+describe aluno;
+
+show tables;
